@@ -1,6 +1,8 @@
 package co.edu.unbosque.view;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.GridLayout;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -9,39 +11,60 @@ import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
 
 public class PanelDatos extends JPanel{
+	
 
 	private JLabel lblTitulo;
-	private JLabel lblNumero;
-	private JTextField txtNumero;
-	private JButton btnValidar;
+	private JLabel lblTextoInicio;
+	private JLabel lblFilas;
+	private JLabel lblColumnas;
+	private JTextField txtNumeroF;
+	private JTextField txtNumeroC;
+	private JButton btnIniciar;
+	
 	
 	public PanelDatos() {
-		setLayout(null);
-		setBackground(Color.orange);
-		setBorder(new TitledBorder("Modulo de datos"));
 		
-		inicializarComponentes();
-		
-		setVisible(true);		
+    	setLayout(new GridLayout(4,2,5,5));
+		//setLayout (new BorderLayout());
+    	setBackground(new Color(18, 18, 89));
+    	TitledBorder titulo = new TitledBorder("Inicio");
+    	titulo.setTitleColor(Color.WHITE);
+	 	setBorder(titulo);
+	 	
+    	inicializarComponentes();
+    	setVisible(true);
+    	
+    			
 	}
 	
 	public void inicializarComponentes() {
-		lblTitulo = new JLabel("MI PRIMER PROGRAMA QUE DETERMINAR PAR O IMPAR");
-		lblTitulo.setBounds(100, 20, 500, 20);
+		lblTitulo = new JLabel("THE CYBER-INFILTRATOR GAME ");	
+		lblTitulo.setForeground(Color.WHITE);
+	
 		add(lblTitulo);
 		
-		lblNumero = new JLabel("Ingrese numero:");
-		lblNumero.setBounds(50, 100, 150, 20);
-		add(lblNumero);
+		lblTextoInicio = new JLabel("Bienvenido a C1B3R 1NF1LTR4T0R");
+		lblTextoInicio.setForeground(Color.WHITE);
+		add (lblTextoInicio);
 		
-		txtNumero = new JTextField();
-		txtNumero.setBounds(220, 100, 200, 20);
-		add(txtNumero);
+		lblFilas = new JLabel("Ingrese el numero de filas para el tablero:");
+		lblFilas.setForeground(Color.WHITE);
+		add (lblFilas);
 		
-		btnValidar = new JButton("Validar");
-		btnValidar.setBounds(240, 150, 80, 20);
-		btnValidar.setBackground(Color.CYAN);
-		add(btnValidar);
+		txtNumeroF = new JTextField();
+		add (txtNumeroF);
+		
+		lblColumnas = new JLabel("Ingrese el numero de columnas para el tablero:");
+		lblColumnas.setForeground(Color.WHITE);
+		add (lblColumnas);
+		
+		txtNumeroF = new JTextField();
+		add (txtNumeroF);
+		
+		btnIniciar = new JButton("Iniciar");
+		btnIniciar .setBackground(Color.white);
+		//btnIniciar.setBounds(220, 100, 30, 20);
+		add(btnIniciar );
 	}
 
 	public JLabel getLblTitulo() {
@@ -52,28 +75,51 @@ public class PanelDatos extends JPanel{
 		this.lblTitulo = lblTitulo;
 	}
 
-	public JLabel getLblNumero() {
-		return lblNumero;
+	public JLabel getLblTextoInicio() {
+		return lblTextoInicio;
 	}
 
-	public void setLblNumero(JLabel lblNumero) {
-		this.lblNumero = lblNumero;
+	public void setLblTextoInicio(JLabel lblTextoInicio) {
+		this.lblTextoInicio = lblTextoInicio;
 	}
 
-	public JTextField getTxtNumero() {
-		return txtNumero;
+	public JLabel getLblFilas() {
+		return lblFilas;
 	}
 
-	public void setTxtNumero(JTextField txtNumero) {
-		this.txtNumero = txtNumero;
+	public void setLblFilas(JLabel lblFilas) {
+		this.lblFilas = lblFilas;
 	}
 
-	public JButton getBtnValidar() {
-		return btnValidar;
+	public JLabel getLblColumnas() {
+		return lblColumnas;
 	}
 
-	public void setBtnValidar(JButton btnValidar) {
-		this.btnValidar = btnValidar;
+	public void setLblColumnas(JLabel lblColumnas) {
+		this.lblColumnas = lblColumnas;
 	}
-	
+
+	public JTextField getTxtNumeroF() {
+		return txtNumeroF;
+	}
+
+	public void setTxtNumeroF(JTextField txtNumeroF) {
+		this.txtNumeroF = txtNumeroF;
+	}
+
+	public JTextField getTxtNumeroC() {
+		return txtNumeroC;
+	}
+
+	public void setTxtNumeroC(JTextField txtNumeroC) {
+		this.txtNumeroC = txtNumeroC;
+	}
+
+	public JButton getBtnIniciar() {
+		return btnIniciar;
+	}
+
+	public void setBtnIniciar(JButton btnIniciar) {
+		this.btnIniciar = btnIniciar;
+	}
 }
